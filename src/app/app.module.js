@@ -1,5 +1,6 @@
 import {WFMModel} from "../framework/index";
 import {appComponent} from "./app.component";
+import {appHeader} from "./common/app.header";
 
 class AppModule extends WFMModel{
 
@@ -10,6 +11,7 @@ class AppModule extends WFMModel{
 
 export const appModule = new AppModule({
     components: [
-        appComponent
+        appComponent,
+        appHeader
     ]
 })

@@ -1,7 +1,7 @@
 import {WFMComponent} from "../framework/index";
 
-class AppComponent extends WFMComponent{
-    constructor(config){
+class AppComponent extends WFMComponent {
+    constructor(config) {
         super(config);
     }
 }
@@ -9,9 +9,19 @@ class AppComponent extends WFMComponent{
 export const appComponent = new AppComponent({
     selector: "app-root",
     template: `
-    <div>
-    <h4>App component works</h4>
-    <h6>Roxy</h6>
-    </div>
+    <app-header></app-header>
+    <div class="row">
+        <div class="col s6 offset-s3" style="margin-top: 40px;">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Главная страница</span>
+              <p>Нихуя.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Съебать</a>
+            </div>
+          </div>
+        </div>
+      </div>
 `
 })
