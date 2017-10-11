@@ -1,13 +1,15 @@
-export class Module{
-    constructor(config){
-      this.components = config.components
+export class Module {
+    constructor(config) {
+        this.components = config.components
+        this.bootstrapComponent = config.bootstrap
     }
 
-    start(){
+    start() {
         this.initComponents()
     }
 
-    initComponents(){
+    initComponents() {
+        this.bootstrapComponent.render()
         this.components.forEach(c => c.render())
     }
 }

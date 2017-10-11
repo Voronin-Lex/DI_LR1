@@ -11,7 +11,8 @@ class AppModule extends WFMModel{
 
 export const appModule = new AppModule({
     components: [
-        appComponent,
         appHeader
-    ]
+    ],
+
+    bootstrap: appComponent
 })
