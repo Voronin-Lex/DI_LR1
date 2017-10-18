@@ -1,6 +1,4 @@
-import {WFMComponent} from "../../framework/index";
-import {router} from "../../framework/tools/router";
-
+import {WFMComponent, router} from "framework";
 
 class HomePageComponent extends WFMComponent{
     constructor(config){

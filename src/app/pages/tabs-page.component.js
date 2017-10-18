@@ -1,4 +1,4 @@
-import {WFMComponent} from "../../framework/index";
+import {WFMComponent} from "framework";
 
 
 class TabsPageComponent extends WFMComponent {
@@ -10,14 +10,6 @@ class TabsPageComponent extends WFMComponent {
         return {
             'click .collapsible' : 'onTabClick'
         }
-    }
-
-    onInit(){
-        console.log('Component Init')
-    }
-
-    afterInit(){
-        console.log('Component after Init')
     }
 
     onTabClick({target}){
