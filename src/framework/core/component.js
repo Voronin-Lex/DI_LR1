@@ -18,7 +18,12 @@ export class Component {
     _initEvents() {
         if (wfm.isUndefined(this.events)) return
 
-        let events = this.events
-        console.log(events)
+        let events = this.events()
+        Object.keys(events).forEach(key => {
+            let listener = key.split(' ')
+
+            this.el.querySelector(listener[1])
+                .addEventListener(listener[0], this[events[key]].bind(this))
+        })
     }
 }

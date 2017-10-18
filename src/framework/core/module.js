@@ -25,17 +25,21 @@ export class Module {
 
     renderRoute() {
         let url = router.getUrl()
-        let route = this.routes.find(r => r.path ===url)
+        let route = this.routes.find(r => r.path === url)
 
-        if(wfm.isUndefined(route)){
-            route = this.routes.find(r=> r.path === "**")
+        if (wfm.isUndefined(route)) {
+            route = this.routes.find(r => r.path === "**")
         }
 
         document.querySelector('router-outlet').innerHTML = `<${route.component.selector}></${route.component.selector}>`;
         this.renderComponent(route.component)
     }
 
-    renderComponent(comp){
+    renderComponent(comp) {
+        if (!wfm.isUndefined(comp.onInit))
+            comp.onInit()
         comp.render()
+        if (!wfm.isUndefined(comp.afterInit))
+            comp.afterInit()
     }
 }
