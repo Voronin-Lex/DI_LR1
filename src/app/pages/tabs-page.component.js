@@ -1,4 +1,4 @@
-import {WFMComponent} from "framework";
+import {WFMComponent, $} from "framework";
 
 
 class TabsPageComponent extends WFMComponent {
@@ -13,10 +13,13 @@ class TabsPageComponent extends WFMComponent {
     }
 
     onTabClick({target}) {
-        if (!target.classList.contains('collapsible-header')) return
+        let $target = $(target);
+        if(!$target.hasClass('collapsible-header')) return;
 
-        this.el.querySelectorAll('.js-tab').forEach(e => e.classList.remove('active'))
-        target.parentNode.classList.add('active')
+        this.el.findAll('.js-tab').forEach( e => e.removeClass('active'));
+        $target.parent().addClass('active');
+        //this.el.querySelectorAll('.js-tab').forEach(e => e.classList.remove('active'))
+        //target.parentNode.classList.add('active')
     }
 }
 
