@@ -1,6 +1,3 @@
-/**
- * Created by Zver on 22.10.2017.
- */
 import {WFMComponent, router} from "framework";
 
 class DirectivePageComponent extends WFMComponent{
