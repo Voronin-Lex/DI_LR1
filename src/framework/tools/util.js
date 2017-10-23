@@ -16,6 +16,10 @@ const _ = {
 
     isString(d){
         return typeof d === 'string';
+    },
+
+    isEmpty(d){
+        return d.length && d.length === 0;
     }
 };
 

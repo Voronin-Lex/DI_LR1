@@ -60,10 +60,9 @@ class DoMManipulator {
         return $(this.nativeElement.parentNode);
     }
 
-    attr(name, value){
+    attr(name, value=null){
         if(_.isNull(value)){
             return this.nativeElement.getAttribute(name);
-            return this;
         }
 
         this.nativeElement.setAttribute(name, value);
